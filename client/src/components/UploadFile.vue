@@ -1,8 +1,14 @@
 <script lang="js">
 import { UPLOAD_URI } from '../constants/server.ts';
+import { mapStores } from 'pinia'
+import { userStore } from '../stores/userstore.ts'
 import axios from 'axios';
 
+
 export default {
+  computed: {
+    ...mapStores(userStore)
+  },
   data() {
     return {
       UPLOAD_URI: UPLOAD_URI,
@@ -25,10 +31,12 @@ export default {
         data: formData,
         headers: {
           'Accept': 'application/json',
-          'Content-Type': 'multipart/form-data'
+          'Content-Type': 'multipart/form-data',
+          'User-UUID': this.userStore.getUUID
         }
       }).then(response => {
         console.log(response);
+        this.$emit('uploadedEvent')
       })
     },
 

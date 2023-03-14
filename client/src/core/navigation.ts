@@ -5,15 +5,16 @@ export function generateTabNavigation(): Array<ITabNavigation> {
       {
         label: "Home",
         icon: "pi pi-fw pi-home",
-        to: ""
+        to: { path: '/'}
       },
       {
         label: "PDF",
         icon: "pi pi-fw pi-file-pdf",
         items: [
           {
-            label: "Left",
+            label: "PDF to Word",
             icon: "pi pi-fw pi-align-left",
+            to: { path: 'upload'}
           },
           {
             label: "Right",

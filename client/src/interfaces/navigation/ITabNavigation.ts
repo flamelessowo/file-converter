@@ -1,7 +1,7 @@
 export interface ITabNavigation {
   label: string | Function;
   icon: string;
-  to?: string;
+  to?: string | object;
   command?: Function;
   url?: string;
   items?: Array<any>;

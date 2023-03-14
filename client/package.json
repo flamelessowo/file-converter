@@ -17,6 +17,7 @@
     "primeflex": "^3.3.0",
     "primeicons": "^6.0.1",
     "primevue": "^3.23.0",
+    "uuid": "^9.0.0",
     "vue": "^3.2.45",
     "vue-router": "^4.1.6"
   },
