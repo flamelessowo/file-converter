@@ -6,6 +6,7 @@ import axios from 'axios';
 
 
 export default {
+  props: ['fromFormat', 'toFormat'],
   computed: {
     ...mapStores(userStore)
   },
@@ -32,10 +33,13 @@ export default {
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'multipart/form-data',
-          'User-UUID': this.userStore.getUUID
+          'x-User-UUID': this.userStore.getUUID,
+          'x-from-format': this.fromFormat,
+          'x-to-format': this.toFormat
         }
       }).then(response => {
         console.log(response);
+        console.log(this.fromFormat, this.toFormat)
         this.$emit('uploadedEvent')
       })
     },

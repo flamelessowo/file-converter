@@ -2,7 +2,6 @@
 import UploadFile from "../components/UploadFile.vue";
 
 const props = defineProps<{ // TODO make usage of own interfaces
-  type: string
   fromFormat: string
   fromFormatLabel: string
   toFormat: string
@@ -19,7 +18,7 @@ const props = defineProps<{ // TODO make usage of own interfaces
       <p>{{ description }}</p>
     </div>
     <div class="upload-box">
-      <UploadFile/>
+      <UploadFile :from-format="fromFormat" :to-format="toFormat"/>
     </div> 
   </div>
 </template>

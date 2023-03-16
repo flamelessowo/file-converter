@@ -1,11 +1,11 @@
 from typing import List
 from fastapi import FastAPI, File, UploadFile
-from fastapi.responses import FileResponse
+from fastapi.responses import FileResponse, StreamingResponse
 from fastapi.requests import Request
 from fastapi.middleware.cors import CORSMiddleware
+import io
 
-#DELETE
-from backend.apps.converter.pdf2word import Pdf2Word 
+from backend.apps.converter.services.converter_service import ConverterService
 
 app = FastAPI()
 
@@ -19,6 +19,7 @@ app.add_middleware(
 
 @app.post("/upload/")
 async def resolve_convert_files(request: Request, files: List[UploadFile] = File(...)):
-    print(request.headers)
-    print(files)
-    return True
+    zipped_files: io.BytesIO = await ConverterService(files, request.headers['x-user-uuid'], request.headers['x-from-format'], request.headers['x-to-format']).convert()
+    return StreamingResponse(iter([zipped_files.getvalue()]),
+                             media_type="application/x-zip-compressed",
+                             headers={"Content-Disposition": "attachment; filename=upload.zip"})

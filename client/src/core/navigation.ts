@@ -14,7 +14,7 @@ export function generateTabNavigation(): Array<ITabNavigation> {
           {
             label: "PDF to Word",
             icon: "pi pi-fw pi-align-left",
-            to: { path: 'upload'}
+            to: { path: 'upload/pdf/word'}
           },
           {
             label: "Right",
