@@ -3,6 +3,7 @@ import { UPLOAD_URI } from '../constants/server.ts';
 import { mapStores } from 'pinia'
 import { userStore } from '../stores/userstore.ts'
 import axios from 'axios';
+import { saveAs } from 'file-saver'
 
 
 export default {
@@ -36,10 +37,11 @@ export default {
           'x-User-UUID': this.userStore.getUUID,
           'x-from-format': this.fromFormat,
           'x-to-format': this.toFormat
-        }
+        },
+        responseType: 'arraybuffer'
       }).then(response => {
-        console.log(response);
-        console.log(this.fromFormat, this.toFormat)
+        const blob = new Blob([response.data], {type: 'application/x-zip-compressed'});
+        saveAs(blob, "upload.zip")
         this.$emit('uploadedEvent')
       })
     },

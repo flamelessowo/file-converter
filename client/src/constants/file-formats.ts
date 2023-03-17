@@ -2,6 +2,7 @@ export enum FileFormats {
   // DOC
   PDF = ".pdf",
   WORD = ".docx",
+  POWER_POINT = ".pptx",
   CSV= ".csv",
   EXCEL = ".xlsx",
   XML = ".xml",
@@ -12,6 +13,7 @@ export enum FileFormats {
   PNG = ".png",
   JPG = ".jpg",
   JPEG = ".jpeg",
+  SVG = ".svg",
   WEBP = ".webp",
 
   // VIDEO AUDIO

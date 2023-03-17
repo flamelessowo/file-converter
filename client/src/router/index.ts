@@ -14,7 +14,7 @@ const router = createRouter({
       component: HomeView,
     },
     {
-      path: "/upload/pdf/word",
+      path: "/upload/pdf/docx",
       name: "pdf.word",
       component: ConvertFileView,
       props: () => ({
@@ -22,6 +22,54 @@ const router = createRouter({
         fromFormatLabel: "PDF",
         toFormat: FileFormats.WORD,
         toFormatLabel: "Word",
+        description: ""
+      })
+    },
+    {
+      path: "/upload/pdf/jpg",
+      name: "pdf.jpg",
+      component: ConvertFileView,
+      props: () => ({
+        fromFormat: FileFormats.PDF,
+        fromFormatLabel: "PDF",
+        toFormat: FileFormats.JPG,
+        toFormatLabel: "JPG",
+        description: ""
+      })
+    },
+    {
+      path: "/upload/pdf/png",
+      name: "pdf.png",
+      component: ConvertFileView,
+      props: () => ({
+        fromFormat: FileFormats.PDF,
+        fromFormatLabel: "PDF",
+        toFormat: FileFormats.PNG,
+        toFormatLabel: "PNG",
+        description: ""
+      })
+    },
+    {
+      path: "/upload/pdf/jpeg",
+      name: "pdf.jpeg",
+      component: ConvertFileView,
+      props: () => ({
+        fromFormat: FileFormats.PDF,
+        fromFormatLabel: "PDF",
+        toFormat: FileFormats.JPEG,
+        toFormatLabel: "JPEG",
+        description: ""
+      })
+    },
+    {
+      path: "/upload/pdf/pptx",
+      name: "pdf.svg",
+      component: ConvertFileView,
+      props: () => ({
+        fromFormat: FileFormats.PDF,
+        fromFormatLabel: "PDF",
+        toFormat: FileFormats.POWER_POINT,
+        toFormatLabel: "Power Point",
         description: ""
       })
     },

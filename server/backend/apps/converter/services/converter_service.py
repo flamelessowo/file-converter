@@ -2,15 +2,26 @@
 from fastapi import UploadFile
 from typing import List
 from .upload_service import UploadService
+
+# region convertors imports
 from ..pdf2word import Pdf2Word
+from ..pdf2image import Pdf2Image
+from ..pdf2powerpoint import Pdf2Pptx
+# endregion
+
 from ..base.abstract_converter import FileConverter
 from helpers import get_file_paths_with_formats
 
 CONVERTORS = {
     '.pdf': {
-        '.docx': Pdf2Word
+        '.docx': Pdf2Word,
+        '.png': Pdf2Image,
+        '.jpg': Pdf2Image,
+        '.jpeg': Pdf2Image,
+        '.pptx': Pdf2Pptx
     }
 }
+
 
 class ConverterService:
 
@@ -28,11 +39,12 @@ class ConverterService:
     async def convert(self):
         converted_filepaths: List[str] = []
         usr_path = await self.upload_service.create_user_folder()
-        file_paths = get_file_paths_with_formats(self.files, self.to_format, usr_path)
+        file_paths = get_file_paths_with_formats(
+            self.files, self.to_format, usr_path)
         file_convertor = self.resolve_convertor()
         for file in self.files:
             await self.upload_service.upload_file(file, usr_path)
-        
+
         for file_path in file_paths:
             await file_convertor.convert(file_path[0], file_path[1])
             converted_filepaths.append(file_path[1])

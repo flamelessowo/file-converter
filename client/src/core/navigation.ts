@@ -14,15 +14,27 @@ export function generateTabNavigation(): Array<ITabNavigation> {
           {
             label: "PDF to Word",
             icon: "pi pi-fw pi-align-left",
-            to: { path: 'upload/pdf/word'}
+            to: { path: 'upload/pdf/docx', replace: true }
           },
           {
-            label: "Right",
+            label: "PDF to Power Point",
+            icon: "pi pi-fw pi-align-left",
+            to: { path: 'upload/pdf/pptx' }
+          },
+          {
+            label: "PDF to JPG",
             icon: "pi pi-fw pi-align-right",
+            to: { path: 'upload/pdf/jpg' }
           },
           {
-            label: "Center",
+            label: "PDF to JPEG",
+            icon: "pi pi-fw pi-align-right",
+            to: { path: 'upload/pdf/jpeg' }
+          },
+          {
+            label: "PDF to PNG",
             icon: "pi pi-fw pi-align-center",
+            to: { path: 'upload/pdf/png'}
           },
           {
             label: "Justify",
