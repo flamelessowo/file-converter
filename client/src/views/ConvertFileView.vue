@@ -13,7 +13,7 @@ const props = defineProps<{ // TODO make usage of own interfaces
   <div>
     <div class="text-box">
       <h1 class="">
-        Convert files from {{ fromFormatLabel }} to {{ toFormatLabel }}
+        Convert files from {{ fromFormatLabel }} to {{ toFormatLabel }} formats
       </h1>
       <p>{{ description }}</p>
     </div>

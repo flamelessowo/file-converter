@@ -63,7 +63,7 @@ const router = createRouter({
     },
     {
       path: "/upload/pdf/pptx",
-      name: "pdf.svg",
+      name: "pdf.pptx",
       component: ConvertFileView,
       props: () => ({
         fromFormat: FileFormats.PDF,
