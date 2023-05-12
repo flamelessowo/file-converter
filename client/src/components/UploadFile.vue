@@ -36,7 +36,8 @@ export default {
           'Content-Type': 'multipart/form-data',
           'x-User-UUID': this.userStore.getUUID,
           'x-from-format': this.fromFormat,
-          'x-to-format': this.toFormat
+          'x-to-format': this.toFormat,
+          'Access-Control-Allow-Origin': '*'
         },
         responseType: 'arraybuffer'
       }).then(response => {
@@ -147,17 +148,6 @@ export default {
             :disabled="!files || files.length === 0"
           ></Button>
         </div>
-        <ProgressBar
-          :value="totalSizePercent"
-          :showValue="false"
-          :class="[
-            'md:w-20rem h-1rem w-full md:ml-auto',
-            { 'exceeded-progress-bar': totalSizePercent > 100 },
-          ]"
-          ><span class="white-space-nowrap"
-            >{{ totalSize }}B / 1Mb</span
-          ></ProgressBar
-        >
       </div>
     </template>
     <template

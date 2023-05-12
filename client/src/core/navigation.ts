@@ -140,27 +140,46 @@ export function generateTabNavigation(): Array<ITabNavigation> {
         label: "File",
         icon: "pi pi-fw pi-file",
         items: [
-          {
-            label: "Edit",
+                    {
+            label: "JSON",
             icon: "pi pi-fw pi-pencil",
             items: [
               {
-                label: "Save",
+                label: "CSV",
                 icon: "pi pi-fw pi-calendar-plus",
+                to: { name: 'json.csv' }
               },
               {
-                label: "Delete",
+                label: "XML",
+                icon: "pi pi-fw pi-calendar-plus",
+                to: { name: 'json.xml' }
+              }
+            ],
+          },
+          {
+            label: "XML",
+            icon: "pi pi-fw pi-calendar-times",
+            items: [
+              {
+                label: "CSV",
                 icon: "pi pi-fw pi-calendar-minus",
+                to: { name: 'xml.csv' }
+              },
+              {
+                label: "JSON",
+                icon: "pi pi-fw pi-calendar-minus",
+                to: { name: 'xml.json' }
               },
             ],
           },
           {
-            label: "Archieve",
+            label: "CSV",
             icon: "pi pi-fw pi-calendar-times",
             items: [
               {
-                label: "Remove",
+                label: "JSON",
                 icon: "pi pi-fw pi-calendar-minus",
+                to: { name: 'csv.json' }
               },
             ],
           },

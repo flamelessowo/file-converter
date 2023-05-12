@@ -73,7 +73,66 @@ const router = createRouter({
         description: ""
       })
     },
-
+    {
+      path: "/upload/json/csv",
+      name: "json.csv",
+      component: ConvertFileView,
+      props: () => ({
+        fromFormat: FileFormats.JSON,
+        fromFormatLabel: "JSON",
+        toFormat: FileFormats.CSV,
+        toFormatLabel: "CSV",
+        description: ""
+      })
+    },
+    {
+      path: "/upload/csv/json",
+      name: "csv.json",
+      component: ConvertFileView,
+      props: () => ({
+        fromFormat: FileFormats.CSV,
+        fromFormatLabel: "CSV",
+        toFormat: FileFormats.JSON,
+        toFormatLabel: "JSON",
+        description: ""
+      })
+    },
+    {
+      path: "/upload/xml/csv",
+      name: "xml.csv",
+      component: ConvertFileView,
+      props: () => ({
+        fromFormat: FileFormats.XML,
+        fromFormatLabel: "XML",
+        toFormat: FileFormats.CSV,
+        toFormatLabel: "CSV",
+        description: ""
+      })
+    },
+    {
+      path: "/upload/xml/json",
+      name: "xml.json",
+      component: ConvertFileView,
+      props: () => ({
+        fromFormat: FileFormats.XML,
+        fromFormatLabel: "XML",
+        toFormat: FileFormats.JSON,
+        toFormatLabel: "JSON",
+        description: ""
+      })
+    },
+    {
+      path: "/upload/json/xml",
+      name: "json.xml",
+      component: ConvertFileView,
+      props: () => ({
+        fromFormat: FileFormats.JSON,
+        fromFormatLabel: "JSON",
+        toFormat: FileFormats.XML,
+        toFormatLabel: "XML",
+        description: ""
+      })
+    }
   ],
 });
 

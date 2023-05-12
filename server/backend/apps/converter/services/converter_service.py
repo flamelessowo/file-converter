@@ -7,6 +7,11 @@ from .upload_service import UploadService
 from ..pdf2word import Pdf2Word
 from ..pdf2image import Pdf2Image
 from ..pdf2powerpoint import Pdf2Pptx
+from ..json2csv import JsonToCsv
+from ..csv2json import CsvToJson
+from ..xml2csv import XmlToCsv
+from ..xml2json import XmlToJson
+from ..json2xml import JsonToXml
 # endregion
 
 from ..base.abstract_converter import FileConverter
@@ -19,6 +24,17 @@ CONVERTORS = {
         '.jpg': Pdf2Image,
         '.jpeg': Pdf2Image,
         '.pptx': Pdf2Pptx
+    },
+    '.json': {
+        '.csv': JsonToCsv,
+        '.xml': JsonToXml,
+    },
+    '.csv': {
+        '.json': CsvToJson
+    },
+    '.xml': {
+        '.csv': XmlToCsv,
+        '.json': XmlToJson
     }
 }
 
