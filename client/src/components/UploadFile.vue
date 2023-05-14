@@ -118,7 +118,7 @@ export default {
     :url="UPLOAD_URI"
     :multiple="true"
     accept=""
-    :maxFileSize="10000000"
+    :maxFileSize="1000000000"
     @uploader="uploader"
     @upload="onTemplatedUpload($event)"
     @select="onSelectedFiles"
@@ -166,16 +166,6 @@ export default {
             :key="file.name + file.type + file.size"
             class="card m-0 px-6 flex flex-column border-1 surface-border align-items-center gap-3"
           >
-            <div>
-              <img
-                role="presentation"
-                :alt="file.name"
-                :src="file.objectURL"
-                width="50"
-                height="50"
-                class="shadow-2"
-              />
-            </div>
             <span class="font-semibold">{{ file.name }}</span>
             <div>{{ formatSize(file.size) }}</div>
             <Badge value="Pending" severity="warning" />

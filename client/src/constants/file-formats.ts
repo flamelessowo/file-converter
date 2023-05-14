@@ -8,6 +8,8 @@ export enum FileFormats {
   XML = ".xml",
   JSON = ".json",
   MARKDOWN = ".md",
+  HTML = ".html",
+  TXT = ".txt",
 
   // IMG
   PNG = ".png",

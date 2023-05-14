@@ -132,6 +132,78 @@ const router = createRouter({
         toFormatLabel: "XML",
         description: ""
       })
+    },
+    {
+      path: "/upload/csv/xml",
+      name: "csv.xml",
+      component: ConvertFileView,
+      props: () => ({
+        fromFormat: FileFormats.CSV,
+        fromFormatLabel: "CSV",
+        toFormat: FileFormats.XML,
+        toFormatLabel: "XML",
+        description: ""
+      })
+    },
+    {
+      path: "/upload/html/txt",
+      name: "html.txt",
+      component: ConvertFileView,
+      props: () => ({
+        fromFormat: FileFormats.HTML,
+        fromFormatLabel: "HTML",
+        toFormat: FileFormats.TXT,
+        toFormatLabel: "TXT",
+        description: ""
+      })
+    },
+    {
+      path: "/upload/word/pdf",
+      name: "word.pdf",
+      component: ConvertFileView,
+      props: () => ({
+        fromFormat: FileFormats.WORD,
+        fromFormatLabel: "Word",
+        toFormat: FileFormats.PDF,
+        toFormatLabel: "PDF",
+        description: ""
+      })
+    },
+    {
+      path: "/upload/mp4/mp3",
+      name: "mp4.mp3",
+      component: ConvertFileView,
+      props: () => ({
+        fromFormat: FileFormats.MP4,
+        fromFormatLabel: "MP4",
+        toFormat: FileFormats.MP3,
+        toFormatLabel: "MP3",
+        description: ""
+      })
+    },
+    {
+      path: "/upload/video/compress",
+      name: "mp4.mp4",
+      component: ConvertFileView,
+      props: () => ({
+        fromFormat: FileFormats.MP4,
+        fromFormatLabel: "Any video",
+        toFormat: FileFormats.MP4,
+        toFormatLabel: "Compress",
+        description: ""
+      })
+    },
+    {
+      path: "/upload/word/txt",
+      name: "word.txt",
+      component: ConvertFileView,
+      props: () => ({
+        fromFormat: FileFormats.WORD,
+        fromFormatLabel: "Word",
+        toFormat: FileFormats.TXT,
+        toFormatLabel: "TXT",
+        description: ""
+      })
     }
   ],
 });

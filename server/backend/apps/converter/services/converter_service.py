@@ -12,6 +12,12 @@ from ..csv2json import CsvToJson
 from ..xml2csv import XmlToCsv
 from ..xml2json import XmlToJson
 from ..json2xml import JsonToXml
+from ..csv2xml import CsvToXml
+from ..html2txt import HtmlToTxt
+from ..word2pdf import Word2Pdf
+from ..mp42mp3 import Mp4ToMp3
+from ..mp42compress import Mp4ToCompress
+from ..word2txt import Word2Txt
 # endregion
 
 from ..base.abstract_converter import FileConverter
@@ -30,11 +36,23 @@ CONVERTORS = {
         '.xml': JsonToXml,
     },
     '.csv': {
-        '.json': CsvToJson
+        '.json': CsvToJson,
+        '.xml': CsvToXml,
     },
     '.xml': {
         '.csv': XmlToCsv,
         '.json': XmlToJson
+    },
+    '.html': {
+        '.txt': HtmlToTxt,
+    },
+    '.docx': {
+        '.pdf': Word2Pdf,
+        '.txt': Word2Txt,
+    },
+    '.mp4': {
+        '.mp3': Mp4ToMp3,
+        '.mp4': Mp4ToCompress
     }
 }
 

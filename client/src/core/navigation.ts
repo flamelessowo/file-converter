@@ -13,62 +13,28 @@ export function generateTabNavigation(): Array<ITabNavigation> {
         items: [
           {
             label: "PDF to Word",
-            icon: "pi pi-fw pi-align-left",
+            icon: "pi pi-fw pi-file",
             to: { name: "pdf.word" }
           },
           {
             label: "PDF to Power Point",
-            icon: "pi pi-fw pi-align-left",
+            icon: "pi pi-fw pi-file",
             to: { name: "pdf.pptx" }
           },
           {
             label: "PDF to JPG",
-            icon: "pi pi-fw pi-align-right",
+            icon: "pi pi-fw pi-file",
             to: { name: "pdf.jpg" }
           },
           {
             label: "PDF to JPEG",
-            icon: "pi pi-fw pi-align-right",
+            icon: "pi pi-fw pi-file",
             to: { name: "pdf.jpeg" }
           },
           {
             label: "PDF to PNG",
-            icon: "pi pi-fw pi-align-center",
+            icon: "pi pi-fw pi-file",
             to: { name: "pdf.png" }
-          },
-        ],
-      },
-      {
-        label: "Image",
-        icon: "pi pi-fw pi-images",
-        items: [
-          {
-            label: "New",
-            icon: "pi pi-fw pi-user-plus",
-          },
-          {
-            label: "Delete",
-            icon: "pi pi-fw pi-user-minus",
-          },
-          {
-            label: "Search",
-            icon: "pi pi-fw pi-users",
-            items: [
-              {
-                label: "Filter",
-                icon: "pi pi-fw pi-filter",
-                items: [
-                  {
-                    label: "Print",
-                    icon: "pi pi-fw pi-print",
-                  },
-                ],
-              },
-              {
-                icon: "pi pi-fw pi-bars",
-                label: "List",
-              },
-            ],
           },
         ],
       },
@@ -77,33 +43,15 @@ export function generateTabNavigation(): Array<ITabNavigation> {
         icon: "pi pi-fw pi-file-word",
         items: [
           {
-            label: "New",
-            icon: "pi pi-fw pi-user-plus",
+            label: "PDF",
+            icon: "pi pi-fw pi-file",
+            to: { name: 'word.pdf' }
           },
           {
-            label: "Delete",
-            icon: "pi pi-fw pi-user-minus",
-          },
-          {
-            label: "Search",
-            icon: "pi pi-fw pi-users",
-            items: [
-              {
-                label: "Filter",
-                icon: "pi pi-fw pi-filter",
-                items: [
-                  {
-                    label: "Print",
-                    icon: "pi pi-fw pi-print",
-                  },
-                ],
-              },
-              {
-                icon: "pi pi-fw pi-bars",
-                label: "List",
-              },
-            ],
-          },
+            label: "TXT",
+            icon: "pi pi-fw pi-file",
+            to: { name: 'word.txt' }
+          }
         ],
       },
       {
@@ -111,28 +59,14 @@ export function generateTabNavigation(): Array<ITabNavigation> {
         icon: "pi pi-fw pi-video",
         items: [
           {
-            label: "Edit",
-            icon: "pi pi-fw pi-pencil",
-            items: [
-              {
-                label: "Save",
-                icon: "pi pi-fw pi-calendar-plus",
+                label: "MP3",
+                icon: "pi pi-volume-up",
+                to: { name: "mp4.mp3"}
               },
-              {
-                label: "Delete",
-                icon: "pi pi-fw pi-calendar-minus",
-              },
-            ],
-          },
           {
-            label: "Archieve",
-            icon: "pi pi-fw pi-calendar-times",
-            items: [
-              {
-                label: "Remove",
-                icon: "pi pi-fw pi-calendar-minus",
-              },
-            ],
+            label: "Compress",
+            icon: "pi pi-fw pi-window-minimize",
+            to: { name: "mp4.mp4" }
           },
         ],
       },
@@ -142,55 +76,64 @@ export function generateTabNavigation(): Array<ITabNavigation> {
         items: [
                     {
             label: "JSON",
-            icon: "pi pi-fw pi-pencil",
+            icon: "pi pi-fw pi-file-edit",
             items: [
               {
                 label: "CSV",
-                icon: "pi pi-fw pi-calendar-plus",
+                icon: "pi pi-fw pi-file-edit",
                 to: { name: 'json.csv' }
               },
               {
                 label: "XML",
-                icon: "pi pi-fw pi-calendar-plus",
+                icon: "pi pi-fw pi-file-edit",
                 to: { name: 'json.xml' }
               }
             ],
           },
           {
             label: "XML",
-            icon: "pi pi-fw pi-calendar-times",
+            icon: "pi pi-fw pi-file-edit",
             items: [
               {
                 label: "CSV",
-                icon: "pi pi-fw pi-calendar-minus",
+                icon: "pi pi-fw pi-file-edit",
                 to: { name: 'xml.csv' }
               },
               {
                 label: "JSON",
-                icon: "pi pi-fw pi-calendar-minus",
+                icon: "pi pi-fw pi-file-edit",
                 to: { name: 'xml.json' }
               },
             ],
           },
           {
             label: "CSV",
-            icon: "pi pi-fw pi-calendar-times",
+            icon: "pi pi-fw pi-file-edit",
             items: [
               {
                 label: "JSON",
-                icon: "pi pi-fw pi-calendar-minus",
+                icon: "pi pi-fw pi-file-edit",
                 to: { name: 'csv.json' }
               },
+              {
+                label: "XML",
+                icon: "pi pi-fw pi-file-edit",
+                to: { name: 'csv.xml' }
+              }
             ],
           },
+          {
+            label: "HTML",
+            icon: "pi pi-fw pi-file-edit",
+            items: [
+              {
+                label: "TXT",
+                icon: "pi pi-fw pi-file-edit",
+                to: { name: 'html.txt' }
+              },
+            ],
+          }
         ],
-      },
-      {
-        label: "Quit",
-        icon: "pi pi-fw pi-power-off",
-        command: () => {
-          alert('Шаряк лох');
-        }
       },
     ] 
 }

@@ -21,9 +21,6 @@ export default {
           class="mr-2"
         />
       </template>
-      <template #end>
-        <InputText placeholder="Search" type="text" />
-      </template>
     </MenuBar>
   </div>
 </template>

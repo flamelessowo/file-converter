@@ -40,3 +40,5 @@ class UploadService:
             content = await file.read()
             await out_file.write(content)
         return out_file_path
+    async def rename_file(self, file: UploadFile, name: str):
+        pass
