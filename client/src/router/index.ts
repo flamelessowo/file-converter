@@ -216,6 +216,30 @@ const router = createRouter({
         toFormatLabel: "JSON with algo",
         description: ""
       })
+    },
+    {
+      path: "/upload/csv/xlsx",
+      name: "csv.xlsx",
+      component: ConvertFileView,
+      props: () => ({
+        fromFormat: FileFormats.CSV,
+        fromFormatLabel: "CSV",
+        toFormat: FileFormats.EXCEL,
+        toFormatLabel: "EXCEL with algo",
+        description: ""
+      })
+    },
+    {
+      path: "/upload/xlsx/csv",
+      name: "xlsx.csv",
+      component: ConvertFileView,
+      props: () => ({
+        fromFormat: FileFormats.EXCEL,
+        fromFormatLabel: "EXCEL",
+        toFormat: FileFormats.CSV,
+        toFormatLabel: "CSV with algo",
+        description: ""
+      })
     }
   ],
 });

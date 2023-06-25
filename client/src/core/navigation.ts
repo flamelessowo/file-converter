@@ -119,6 +119,22 @@ export function generateTabNavigation(): Array<ITabNavigation> {
                 label: "XML",
                 icon: "pi pi-fw pi-file-edit",
                 to: { name: 'csv.xml' }
+              },
+              {
+                label: "EXCEL",
+                icon: "pi pi-fw pi-file-edit",
+                to: { name: 'csv.xlsx' }
+              }
+            ],
+          },
+          {
+            label: "EXCEL",
+            icon: "pi pi-fw pi-file-edit",
+            items: [
+              {
+                label: "CSV",
+                icon: "pi pi-fw pi-file-edit",
+                to: { name: 'xlsx.csv' }
               }
             ],
           },
