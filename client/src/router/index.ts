@@ -218,18 +218,6 @@ const router = createRouter({
       })
     },
     {
-      path: "/upload/html/json",
-      name: "html.json",
-      component: ConvertFileView,
-      props: () => ({
-        fromFormat: FileFormats.HTML,
-        fromFormatLabel: "HTML",
-        toFormat: FileFormats.JSON,
-        toFormatLabel: "JSON with algo",
-        description: ""
-      })
-    },
-    {
       path: "/upload/csv/xlsx",
       name: "csv.xlsx",
       component: ConvertFileView,

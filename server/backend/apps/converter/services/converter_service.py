@@ -18,7 +18,6 @@ from ..word2pdf import Word2Pdf
 from ..mp42mp3 import Mp4ToMp3
 from ..mp42compress import Mp4ToCompress
 from ..word2txt import Word2Txt
-from ..html2json import HTMLtojsonAlgo
 from ..csv2excel import CsvToExcel
 from ..excel2csv import ExcelToCsv
 from ..xml2html import XmlToHtml
@@ -54,7 +53,6 @@ CONVERTORS = {
     },
     '.html': {
         '.txt': HtmlToTxt,
-        '.json': HTMLtojsonAlgo
     },
     '.docx': {
         '.pdf': Word2Pdf,
