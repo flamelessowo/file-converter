@@ -110,6 +110,18 @@ const router = createRouter({
       })
     },
     {
+      path: "/upload/xml/html",
+      name: "xml.html",
+      component: ConvertFileView,
+      props: () => ({
+        fromFormat: FileFormats.XML,
+        fromFormatLabel: "XML",
+        toFormat: FileFormats.HTML,
+        toFormatLabel: "HTML with algo",
+        description: ""
+      })
+    },
+    {
       path: "/upload/xml/json",
       name: "xml.json",
       component: ConvertFileView,

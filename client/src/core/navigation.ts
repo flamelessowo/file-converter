@@ -104,6 +104,11 @@ export function generateTabNavigation(): Array<ITabNavigation> {
                 icon: "pi pi-fw pi-file-edit",
                 to: { name: 'xml.json' }
               },
+              {
+                label: "HTML",
+                icon: "pi pi-fw pi-file-edit",
+                to: { name: 'xml.html' }
+              }
             ],
           },
           {

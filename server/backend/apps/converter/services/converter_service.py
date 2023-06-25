@@ -21,6 +21,7 @@ from ..word2txt import Word2Txt
 from ..html2json import HTMLtojsonAlgo
 from ..csv2excel import CsvToExcel
 from ..excel2csv import ExcelToCsv
+from ..xml2html import XmlToHtml
 # endregion
 
 from ..base.abstract_converter import FileConverter
@@ -48,7 +49,8 @@ CONVERTORS = {
     },
     '.xml': {
         '.csv': XmlToCsv,
-        '.json': XmlToJson
+        '.json': XmlToJson,
+        '.html': XmlToHtml
     },
     '.html': {
         '.txt': HtmlToTxt,
