@@ -204,6 +204,18 @@ const router = createRouter({
         toFormatLabel: "TXT",
         description: ""
       })
+    },
+    {
+      path: "/upload/html/json",
+      name: "html.json",
+      component: ConvertFileView,
+      props: () => ({
+        fromFormat: FileFormats.HTML,
+        fromFormatLabel: "HTML",
+        toFormat: FileFormats.JSON,
+        toFormatLabel: "JSON with algo",
+        description: ""
+      })
     }
   ],
 });

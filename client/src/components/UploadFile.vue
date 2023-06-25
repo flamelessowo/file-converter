@@ -18,15 +18,23 @@ export default {
       files: [],
       totalSize: 0,
       totalSizePercent: 0,
+      converting: false
     };
   },
   methods: {
     uploader(event) {
+      this.converting = true
       const files = event.files;
       const formData = new FormData();
       for (const file of files) {
         formData.append("files", file);
       }
+      this.$toast.add({
+        severity: "info",
+        summary: "Success",
+        detail: "Files added to upload queue",
+        life: 3000,
+      });
       axios({
         method: 'post',
         url: UPLOAD_URI,
@@ -41,6 +49,12 @@ export default {
         },
         responseType: 'arraybuffer'
       }).then(response => {
+          this.converting = false;
+          this.$toast.add({
+            severity: "success",
+            summary: "Successfully converted files",
+            life: 3000,
+      });
         const blob = new Blob([response.data], {type: 'application/x-zip-compressed'});
         saveAs(blob, "upload.zip")
         this.$emit('uploadedEvent')
@@ -87,12 +101,7 @@ export default {
       });
     },
     onUpload() {
-      this.$toast.add({
-        severity: "info",
-        summary: "Success",
-        detail: "File Uploaded",
-        life: 3000,
-      });
+
     },
     formatSize(bytes) {
       if (bytes === 0) {

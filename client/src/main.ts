@@ -18,6 +18,8 @@ import Button from 'primevue/button';
 import ProgressBar from 'primevue/progressbar';
 import Badge from 'primevue/badge';
 import Toast from 'primevue/toast';
+import ToastService from 'primevue/toastservice';
+import ProgressSpinner from 'primevue/progressspinner';
 //#endregion
 
 const app = createApp(App);
@@ -25,6 +27,7 @@ const app = createApp(App);
 app.use(createPinia());
 app.use(PrimeVue);
 app.use(router);
+app.use(ToastService);
 
 //#region PrimeVue components
 app.component('MenuBar', Menubar);
@@ -34,5 +37,6 @@ app.component('Button', Button);
 app.component('Badge', Badge);
 app.component('ProgressBar', ProgressBar);
 app.component('Toast', Toast);
+app.component('ProgressSpinner', ProgressSpinner);
 //#endregion
 app.mount("#app");
